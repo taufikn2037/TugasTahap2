@@ -125,15 +125,15 @@ public class FXMLDocumentController implements Initializable {
     }
     
     private void insertRecord(){
-        String query = "INSERT INTO kursi VALUES (" + tfId.getText() + ",'" + tfNamaKursi.getText() + "','" + tfWarna.getValue().toString() + "',"
-                + tfTanggal.getValue().toString() + "," + tfHarga.getText() + ")";
+        String query = "INSERT INTO kursi VALUES ('" + tfId.getText() + "','" + tfNamaKursi.getText() + "','" + tfWarna.getValue().toString() + "','"
+                + tfTanggal.getValue().toString() + "','" + tfHarga.getText() + "')";
         executeQuery(query);
         showBooks();
     }
     
     private void updateRecord(){
-        String query = "UPDATE  kursi SET nama_kursi  = '" + tfNamaKursi.getText() + "', warna = '" + tfWarna.getValue().toString() + "', tanggal = " +
-                tfTanggal.getValue().toString() + ", harga = " + tfHarga.getText() + " WHERE id = " + tfId.getText() + "";
+        String query = "UPDATE  kursi SET nama_kursi  = '" + tfNamaKursi.getText() + "', warna = '" + tfWarna.getValue().toString() + "', tanggal = '" +
+                tfTanggal.getValue().toString() + "', harga = '" + tfHarga.getText() + "' WHERE id = '" + tfId.getText() + "' ";
         executeQuery(query);
         showBooks();
     }
